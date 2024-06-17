@@ -1,9 +1,16 @@
 const express = require("express")
+const bodyParser = require('body-parser')
+
 const serverConfig = require('./config/serverConfig')
-const { connect } = require("mongoose")
+// const { connect } = require("mongoose")
 const connectDB = require('./config/dbConfig')
 
 const app = express()
+
+app.use(bodyParser.json()); // how to read json()
+app.use(bodyParser.text()); // how to read text()
+app.use(bodyParser.urlencoded()); // how to read urlencoded()
+
 
 app.listen(serverConfig.PORT, async () => {
     // console.log(process.env.PORT)
@@ -16,4 +23,4 @@ app.listen(serverConfig.PORT, async () => {
 
 // ambedreb21
 // enxm4Kb0p1sZmSqI
-// mongodb+srv://ambedreb21:enxm4Kb0p1sZmSqI@cluster0.19jjzxo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+// mongodb+srv://ambedreb21:enxm4Kb0p1sZmSqI@cluster0.19jjzxo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0        
