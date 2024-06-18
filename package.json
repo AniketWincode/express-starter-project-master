@@ -1,5 +1,5 @@
 {
-  "name": "expressstarter",
+  "name": "apihw",
   "version": "1.0.0",
   "description": "This is a expressStarter",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "mongoose": "^8.4.1",
+    "mongoose": "^8.4.3",
     "nodemon": "^3.1.3"
   }
 }

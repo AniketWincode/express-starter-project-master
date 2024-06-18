@@ -4,6 +4,8 @@ const bodyParser = require('body-parser')
 const serverConfig = require('./config/serverConfig')
 // const { connect } = require("mongoose")
 const connectDB = require('./config/dbConfig')
+const todo = require("./schema/userschema")
+
 
 const app = express()
 
@@ -12,11 +14,16 @@ app.use(bodyParser.text()); // how to read text()
 app.use(bodyParser.urlencoded()); // how to read urlencoded()
 
 
+require("../src/routes/todoroutes")(app)
+
 app.listen(serverConfig.PORT, async () => {
     // console.log(process.env.PORT)
     await connectDB();
     console.log(`Server started at port ${serverConfig.PORT}`);
+    // console.log("New todo is created")
+    // console.log(newTodo)
 })
+
 
 
 // localhost:3000 (socket address)
